@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | 9D Capital LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy-deep: #0A2640;
+            --navy-medium: #1A3A5C;
+            --white: #FFFFFF;
+            --gold: #C6A65A;
+            --charcoal: #2C2C2C;
+            --gray-light: #F5F5F7;
+            --gray-medium: #8E8E93;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--navy-deep);
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 45px;
+        }
+        
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 80px 60px 60px;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-medium) 100%);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 60px;
+        }
+        
+        .last-updated {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E5E7;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            font-size: 20px;
+            color: var(--navy-deep);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .section ul {
+            margin: 20px 0 20px 30px;
+        }
+        
+        .section li {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background: #FFF4E6;
+            border-left: 4px solid #FF9800;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .warning-box p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: var(--charcoal);
+        }
+        
+        .warning-box strong {
+            color: #FF9800;
+        }
+        
+        .highlight-box {
+            background: var(--gray-light);
+            border-left: 4px solid var(--gold);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        
+        .contact-info {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 60px 60px 30px;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 30px 50px;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .content {
+                padding: 60px 30px;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">9D CAPITAL</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="who-we-are.html">Who We Are</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="page-header">
+        <h1>Terms of Service</h1>
+        <p>Legal agreements governing your use of our website and services</p>
+    </div>
+    
+    <div class="content">
+        <div class="last-updated">
+            <strong>Last Updated:</strong> January 1, 2025
+        </div>
+        
+        <div class="section">
+            <h2>Agreement to Terms</h2>
+            <p>
+                By accessing or using the website of 9D Capital LLC ("9D Capital," "we," "us," or "our"), 
+                you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, 
+                you may not access or use our website or services.
+            </p>
+            <p>
+                These Terms constitute a legally binding agreement between you and 9D Capital. We may update 
+                these Terms at any time, and your continued use of our website constitutes acceptance of the 
+                updated Terms.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Investment Advisory Services</h2>
+            
+            <h3>Registration and Fiduciary Duty</h3>
+            <p>
+                9D Capital is a Registered Investment Adviser (RIA) with the Securities and Exchange Commission 
+                (SEC), CRD #308524. As an RIA, we have a fiduciary duty to act in the best interests of our clients.
+            </p>
+            
+            <h3>Advisory Relationship</h3>
+            <p>
+                Our advisory services are provided pursuant to a written Investment Advisory Agreement. This 
+                website does not establish an advisory relationship. An advisory relationship is only established 
+                upon execution of our advisory agreement and completion of our client onboarding process.
+            </p>
+            
+            <div class="warning-box">
+                <p><strong>Important:</strong> Nothing on this website constitutes investment advice, a 
+                recommendation to buy or sell securities, or an offer to provide investment advisory services 
+                to any person in any jurisdiction where such offer would be unlawful.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Investment Disclaimers</h2>
+            
+            <h3>No Guarantee of Results</h3>
+            <p>
+                Past performance is not indicative of future results. All investments involve risk, including 
+                the potential loss of principal. There is no guarantee that any investment strategy will achieve 
+                its objectives or that you will not lose money.
+            </p>
+            
+            <h3>Market Risks</h3>
+            <p>
+                Investment returns and principal value will fluctuate with market conditions, and you may have 
+                a gain or loss when you sell your investments. Different types of investments involve varying 
+                degrees of risk, and there can be no assurance that any specific investment or strategy will be 
+                profitable.
+            </p>
+            
+            <h3>Forward-Looking Statements</h3>
+            <p>
+                Any forward-looking statements or forecasts on this website are based on assumptions and current 
+                expectations, which are subject to risks and uncertainties. Actual results may differ materially 
+                from those expressed in forward-looking statements.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Eligibility and Client Qualifications</h2>
+            
+            <h3>Minimum Investment</h3>
+            <p>
+                9D Capital maintains a minimum account size of $5,000,000 USD. We reserve the right to waive 
+                or modify this minimum at our sole discretion.
+            </p>
+            
+            <h3>Accredited Investor Status</h3>
+            <p>
+                Certain investment opportunities we may present, including private placements and alternative 
+                investments, are limited to accredited investors as defined by SEC regulations. You may be 
+                required to provide documentation verifying your accredited investor status.
+            </p>
+            
+            <h3>Geographic Limitations</h3>
+            <p>
+                Our services are generally available only to U.S. residents. If you are located outside the 
+                United States, you must contact us before engaging our services to determine if we can legally 
+                provide services in your jurisdiction.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Website Use and Restrictions</h2>
+            
+            <h3>Permitted Use</h3>
+            <p>
+                You may access and use this website for lawful purposes only. You agree not to:
+            </p>
+            <ul>
+                <li>Use the website in any way that violates any applicable law or regulation</li>
+                <li>Attempt to gain unauthorized access to our systems or networks</li>
+                <li>Transmit any viruses, malware, or other malicious code</li>
+                <li>Engage in any automated data collection or scraping</li>
+                <li>Impersonate any person or entity</li>
+                <li>Interfere with or disrupt the website's operation</li>
+            </ul>
+            
+            <h3>Content Accuracy</h3>
+            <p>
+                While we strive to provide accurate and current information, we make no representations or 
+                warranties regarding the accuracy, completeness, or timeliness of any content on this website. 
+                Information is provided "as is" without warranty of any kind.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Intellectual Property Rights</h2>
+            
+            <h3>Ownership</h3>
+            <p>
+                All content on this website, including text, graphics, logos, images, and software, is the 
+                property of 9D Capital or its licensors and is protected by U.S. and international copyright, 
+                trademark, and other intellectual property laws.
+            </p>
+            
+            <h3>Limited License</h3>
+            <p>
+                We grant you a limited, non-exclusive, non-transferable license to access and use this website 
+                for personal, non-commercial purposes. You may not copy, modify, distribute, sell, or exploit 
+                any content without our express written permission.
+            </p>
+            
+            <h3>Trademarks</h3>
+            <p>
+                "9D Capital" and our logo are trademarks of 9D Capital LLC. You may not use our trademarks 
+                without our prior written consent.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Third-Party Links and Services</h2>
+            <p>
+                This website may contain links to third-party websites or services that are not owned or 
+                controlled by 9D Capital. We have no control over and assume no responsibility for the content, 
+                privacy policies, or practices of any third-party websites or services.
+            </p>
+            <p>
+                We do not warrant the offerings of any third parties or their websites. You acknowledge and 
+                agree that we shall not be responsible for any damage or loss caused by your use of any 
+                third-party content, goods, or services.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Limitation of Liability</h2>
+            
+            <div class="warning-box">
+                <p>
+                    <strong>To the maximum extent permitted by law:</strong> 9D Capital, its officers, 
+                    directors, employees, and agents shall not be liable for any indirect, incidental, special, 
+                    consequential, or punitive damages, or any loss of profits or revenues, whether incurred 
+                    directly or indirectly, or any loss of data, use, goodwill, or other intangible losses 
+                    resulting from:
+                </p>
+                <ul style="margin-top: 15px;">
+                    <li>Your use or inability to use the website</li>
+                    <li>Any unauthorized access to or use of our systems</li>
+                    <li>Any interruption or cessation of transmission to or from the website</li>
+                    <li>Any bugs, viruses, or similar items that may be transmitted through the website</li>
+                    <li>Any errors or omissions in any content</li>
+                </ul>
+            </div>
+            
+            <p>
+                This limitation of liability applies regardless of the legal theory on which your claim is 
+                based, whether in contract, tort, negligence, strict liability, or otherwise.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Indemnification</h2>
+            <p>
+                You agree to indemnify, defend, and hold harmless 9D Capital, its affiliates, and their 
+                respective officers, directors, employees, and agents from and against any claims, liabilities, 
+                damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:
+            </p>
+            <ul>
+                <li>Your use of the website</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any rights of another party</li>
+                <li>Any misrepresentation made by you</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Dispute Resolution and Arbitration</h2>
+            
+            <h3>Binding Arbitration</h3>
+            <p>
+                Any dispute, claim, or controversy arising out of or relating to these Terms or your use of 
+                the website shall be resolved through binding arbitration in accordance with the Commercial 
+                Arbitration Rules of the American Arbitration Association.
+            </p>
+            
+            <h3>Arbitration Procedures</h3>
+            <ul>
+                <li>Arbitration shall take place in New York, New York</li>
+                <li>The arbitration shall be conducted by a single arbitrator</li>
+                <li>The arbitrator's decision shall be final and binding</li>
+                <li>Judgment on the award may be entered in any court of competent jurisdiction</li>
+            </ul>
+            
+            <h3>Class Action Waiver</h3>
+            <p>
+                You agree that any arbitration shall be conducted in your individual capacity only and not as 
+                a class action or other representative action. You expressly waive your right to file a class 
+                action or seek relief on a class basis.
+            </p>
+            
+            <h3>Exceptions</h3>
+            <p>
+                Either party may seek injunctive or other equitable relief in any court of competent jurisdiction 
+                to prevent actual or threatened infringement of intellectual property rights.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Governing Law</h2>
+            <p>
+                These Terms shall be governed by and construed in accordance with the laws of the State of 
+                New York, without regard to its conflict of law provisions. Any legal action arising out of 
+                these Terms shall be subject to the exclusive jurisdiction of the state and federal courts 
+                located in New York County, New York.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Severability</h2>
+            <p>
+                If any provision of these Terms is found to be unenforceable or invalid, that provision shall 
+                be limited or eliminated to the minimum extent necessary so that the remaining provisions shall 
+                remain in full force and effect.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Entire Agreement</h2>
+            <p>
+                These Terms, together with our Privacy Policy and any Investment Advisory Agreement you may 
+                enter into, constitute the entire agreement between you and 9D Capital regarding your use of 
+                the website and supersede all prior agreements and understandings.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Changes to Terms</h2>
+            <p>
+                We reserve the right to modify these Terms at any time. We will notify you of material changes 
+                by posting the updated Terms on this page with a new "Last Updated" date. Your continued use 
+                of the website after changes are posted constitutes acceptance of the modified Terms.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Contact Information</h2>
+            <p>
+                If you have questions about these Terms, you may contact us at:
+            </p>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Legal Department</h3>
+            <p>
+                <strong>9D Capital LLC</strong><br>
+                244 Fifth Avenue, Suite 1211<br>
+                New York, NY 10001
+            </p>
+            <p>
+                Email: <a href="mailto:contact@9d.capital">contact@9d.capital</a><br>
+                Phone: <a href="tel:+12127293498">(212) 729-3498</a>
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 9D Capital LLC. All rights reserved. | Registered Investment Adviser | CRD #308524</p>
+    </footer>
+</body>
+</html>

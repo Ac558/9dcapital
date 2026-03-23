@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form ADV | 9D Capital LLC</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy-deep: #0A2640;
+            --navy-medium: #1A3A5C;
+            --white: #FFFFFF;
+            --gold: #C6A65A;
+            --charcoal: #2C2C2C;
+            --gray-light: #F5F5F7;
+            --gray-medium: #8E8E93;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* =====================
+           HEADER & NAVIGATION
+           ===================== */
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--navy-deep);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            height: 70px;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .logo:hover {
+            color: var(--gold);
+        }
+        
+        nav {
+            display: flex;
+            gap: 45px;
+        }
+        
+        nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a.active {
+            color: var(--gold);
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        /* =====================
+           MAIN CONTENT
+           ===================== */
+        
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-medium) 100%);
+            padding: 100px 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Content Section */
+        .content-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 60px;
+        }
+        
+        .form-adv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .form-adv-box {
+            background: var(--gray-light);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-adv-box:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .form-adv-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        
+        .form-adv-box p {
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .download-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--navy-deep);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .download-button:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(198, 166, 90, 0.3);
+        }
+        
+        /* Contact Form */
+        .contact-form-section {
+            background: var(--gray-light);
+            border-radius: 12px;
+            padding: 60px;
+        }
+        
+        .contact-form-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--navy-deep);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form-section p {
+            text-align: center;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy-deep);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--navy-deep);
+            box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background: var(--navy-deep);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(198, 166, 90, 0.3);
+        }
+        
+        /* =====================
+           FOOTER
+           ===================== */
+        
+        footer {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--gold);
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .footer-column p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .footer-contact-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--gold);
+            stroke-width: 2;
+        }
+        
+        .footer-contact-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .footer-contact-text a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-contact-text a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(198, 166, 90, 0.2);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-legal-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-legal-links a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-disclaimer {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-disclaimer p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+        
+        /* =====================
+           RESPONSIVE DESIGN
+           ===================== */
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 30px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 80px);
+                background: var(--navy-deep);
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -4px 0 12px rgba(0,0,0,0.2);
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .page-header {
+                padding: 80px 30px;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .content-section {
+                padding: 0 30px;
+            }
+            
+            .form-adv-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-legal-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">9D CAPITAL</a>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="who-we-are.html">Who We Are</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="client-portal.html">Client Portal</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Form ADV</h1>
+            <p>
+                Access our regulatory filings and important disclosures about our investment advisory services 
+                and business practices.
+            </p>
+        </section>
+        
+        <!-- Content Section -->
+        <section class="content-section">
+            <div class="form-adv-grid">
+                <div class="form-adv-box">
+                    <h2>Form ADV Part 1</h2>
+                    <p>
+                        Contains information about our advisory business, ownership, clients, employees, 
+                        business practices, affiliations, and any disciplinary events of our firm or our employees.
+                    </p>
+                    <a href="#" class="download-button">Download Part 1</a>
+                </div>
+                
+                <div class="form-adv-box">
+                    <h2>Form ADV Part 2A</h2>
+                    <p>
+                        Our firm brochure that provides information about our advisory services, fees, 
+                        investment strategies, conflicts of interest, and disciplinary information.
+                    </p>
+                    <a href="#" class="download-button">Download Part 2A</a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Request Additional Information</h2>
+                <p>
+                    If you have questions about our Form ADV or would like to receive additional information, 
+                    please contact us using the form below.
+                </p>
+                
+                <form class="contact-form" id="formAdvContactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiry">Type of Inquiry</label>
+                        <select id="inquiry" name="inquiry" required>
+                            <option value="">Select an option</option>
+                            <option value="form-adv">Form ADV Request</option>
+                            <option value="general">General Information</option>
+                            <option value="compliance">Compliance Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Request</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Column 1: Brand & Contact -->
+                    <div class="footer-column">
+                        <span class="footer-logo">9D CAPITAL</span>
+                        <p>
+                            A boutique wealth management firm providing institutional-grade investment strategies 
+                            and fiduciary advisory services to discerning individuals and families.
+                        </p>
+                        
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="footer-contact-text">
+                                244 Fifth Avenue, Suite 1211<br>
+                                New York, NY 10001
+                            </div>
+                        </div>
+                        
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="footer-contact-text">
+                                <a href="mailto:contact@9d.capital">contact@9d.capital</a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.7869 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.5953 1.99522 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04207 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5864 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z"/>
+                                </svg>
+                            </div>
+                            <div class="footer-contact-text">
+                                <a href="tel:+12127293498">(212) 729-3498</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2: Quick Links -->
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html">Wealth Management</a></li>
+                            <li><a href="services.html">Family Office</a></li>
+                            <li><a href="services.html">Tax Planning</a></li>
+                            <li><a href="services.html">Estate Planning</a></li>
+                            <li><a href="services.html">Private Markets</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 3: Company -->
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="who-we-are.html">About Us</a></li>
+                            <li><a href="services.html">Investment Philosophy</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="client-portal.html">Client Portal</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 4: Regulatory -->
+                    <div class="footer-column footer-regulatory">
+                        <h4>Regulatory Information</h4>
+                        <p>
+                            9D Capital LLC is a Registered Investment Adviser with the 
+                            U.S. Securities and Exchange Commission.
+                        </p>
+                        <span class="footer-badge">Registered Investment Adviser</span>
+                        <span class="footer-badge">CRD #308524</span>
+                        <p style="margin-top: 15px;">
+                            Client assets held in custody at SEI Private Trust Company, 
+                            a qualified custodian with over $1.2 trillion in assets under administration.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        © 2025 9D Capital LLC. All rights reserved.
+                    </div>
+                    <div class="footer-legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="form-adv.html">Form ADV</a>
+                        <a href="careers.html">Careers</a>
+                    </div>
+                </div>
+                
+                <!-- Footer Disclaimer -->
+                <div class="footer-disclaimer">
+                    <p>
+                        <strong>Important Disclosures:</strong> This website is for informational purposes only and does not constitute 
+                        an offer to sell or a solicitation of an offer to buy any security. Past performance is not indicative of future 
+                        results. All investments involve risk, including the possible loss of principal. 9D Capital LLC is a Registered 
+                        Investment Adviser (RIA) registered with the U.S. Securities and Exchange Commission (SEC CRD #308524). Registration 
+                        does not imply a certain level of skill or training. For more information, including our Form ADV Part 2 brochure, 
+                        please contact us or visit the SEC's Investment Adviser Public Disclosure website at www.adviserinfo.sec.gov.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Form submission
+        document.getElementById('formAdvContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request. We will contact you within 1-2 business days.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

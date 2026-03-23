@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are | 9D Capital LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy-deep: #0A2640;
+            --navy-medium: #1A3A5C;
+            --white: #FFFFFF;
+            --gold: #C6A65A;
+            --charcoal: #2C2C2C;
+            --gray-light: #F5F5F7;
+            --gray-medium: #8E8E93;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
+        /* Header - Same as main site */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--navy-deep);
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 45px;
+        }
+        
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 120px 60px 80px;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-medium) 100%);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Content Section */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 60px;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: var(--navy-deep);
+            margin-bottom: 30px;
+        }
+        
+        .content-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            background: var(--white);
+            border: 1px solid #E5E5E7;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--gold) 0%, #D4AF37 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--white);
+        }
+        
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--navy-deep);
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            font-size: 15px;
+            color: var(--gray-medium);
+        }
+        
+        /* Team Section */
+        .team-section {
+            background: var(--gray-light);
+            padding: 100px 60px;
+        }
+        
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .team-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+        
+        .team-member {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 50px;
+        }
+        
+        .team-member h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--navy-deep);
+            margin-bottom: 10px;
+        }
+        
+        .team-title {
+            font-size: 14px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+        
+        .team-bio {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 60px 60px 30px;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .values-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header {
+                padding: 100px 30px 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 38px;
+            }
+            
+            .content {
+                padding: 80px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">9D CAPITAL</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="who-we-are.html" class="active">Who We Are</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="page-header">
+        <h1>Who We Are</h1>
+        <p>Boutique wealth management built on institutional expertise, fiduciary commitment, and personalized service</p>
+    </div>
+    
+    <div class="content">
+        <div class="content-section">
+            <h2>Our Story</h2>
+            <p>
+                9D Capital was founded with a clear mission: to deliver institutional-grade wealth management 
+                with the personalized attention and flexibility that only a boutique firm can provide.
+            </p>
+            <p>
+                As a Registered Investment Adviser, we operate under a fiduciary standard, meaning we are 
+                legally obligated to act in your best interests at all times. We don't sell products, 
+                we don't earn commissions, and we don't have proprietary investments to push. Our only 
+                focus is on helping you achieve your financial objectives.
+            </p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Our Philosophy</h2>
+            <p>
+                We believe wealth management should be straightforward, transparent, and aligned with your 
+                long-term goals. Our approach combines sophisticated investment strategies with practical 
+                financial planning, all delivered with the highest level of integrity and professionalism.
+            </p>
+            <p>
+                We work with a select group of clients who value quality over quantity, allowing us to 
+                provide the deep, meaningful relationships that are essential for effective wealth management.
+            </p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">⚖</div>
+                    <h3>Fiduciary Standard</h3>
+                    <p>Your interests always come first. No conflicts, no exceptions.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Institutional Infrastructure</h3>
+                    <p>Assets held at SEI Private Trust, a leading institutional custodian.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Selective Relationships</h3>
+                    <p>We work with a limited number of clients to ensure personalized attention.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="team-section">
+        <div class="team-container">
+            <div class="team-header">
+                <h2>WHO WE SERVE</h2>
+                <p style="font-size: 22px; color: var(--gray-medium); max-width: 700px; margin: 0 auto 60px;">
+                    Two Clients. One Standard of Excellence.<br>
+                    <span style="font-size: 18px;">We partner with private clients and organizations that value institutional discipline and private‑client discretion.</span>
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 1px solid #e0e0e0;">
+                    <h3 style="color: var(--gold-dark); font-size: 24px; margin-bottom: 15px;">PRIVATE CLIENTS</h3>
+                    <div class="team-title" style="color: var(--gray-dark); font-weight: 600; margin-bottom: 20px;">Individuals & Families</div>
+                    <p class="team-bio" style="margin-bottom: 20px; color: var(--gray-medium); font-size: 14px; letter-spacing: 1px;">
+                        Entrepreneurs │ Athletes │ Entertainers │ Executives │ Families
+                    </p>
+                    <p class="team-bio">
+                        Multi‑dimensional wealth architecture across investing, tax, liquidity, and legacy. Meticulous coordination around concentrated holdings, cash‑flow design, entity structure, and generational planning—delivered with discretion.
+                    </p>
+                </div>
+                
+                <div class="team-member" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 1px solid #e0e0e0;">
+                    <h3 style="color: var(--gold-dark); font-size: 24px; margin-bottom: 15px;">CORPORATIONS & ORGANIZATIONS</h3>
+                    <div class="team-title" style="color: var(--gray-dark); font-weight: 600; margin-bottom: 20px;">Enterprises, Teams & Institutions</div>
+                    <p class="team-bio" style="margin-bottom: 20px; color: var(--gray-medium); font-size: 14px; letter-spacing: 1px;">
+                        Companies │ Partnerships │ Nonprofits │ Teams │ Agencies
+                    </p>
+                    <p class="team-bio">
+                        Institutional retirement and executive solutions—plan design and governance, investment menus, fiduciary oversight, and advisor‑led financial wellness. Treasury and liquidity frameworks designed for resilience and clarity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 9D Capital LLC. All rights reserved. | Registered Investment Adviser | CRD #308524</p>
+    </footer>
+</body>
+</html>

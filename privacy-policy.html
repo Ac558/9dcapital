@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | 9D Capital LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --navy-deep: #0A2640;
+            --navy-medium: #1A3A5C;
+            --white: #FFFFFF;
+            --gold: #C6A65A;
+            --charcoal: #2C2C2C;
+            --gray-light: #F5F5F7;
+            --gray-medium: #8E8E93;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--navy-deep);
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 45px;
+        }
+        
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 80px 60px 60px;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-medium) 100%);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 60px;
+        }
+        
+        .last-updated {
+            font-size: 14px;
+            color: var(--gray-medium);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E5E7;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--navy-deep);
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            font-size: 20px;
+            color: var(--navy-deep);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .section ul {
+            margin: 20px 0 20px 30px;
+        }
+        
+        .section li {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background: var(--gray-light);
+            border-left: 4px solid var(--gold);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        
+        .contact-info {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 60px 60px 30px;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 30px 50px;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .content {
+                padding: 60px 30px;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">9D CAPITAL</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="who-we-are.html">Who We Are</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="page-header">
+        <h1>Privacy Policy</h1>
+        <p>How we collect, use, and protect your information</p>
+    </div>
+    
+    <div class="content">
+        <div class="last-updated">
+            <strong>Last Updated:</strong> January 1, 2025
+        </div>
+        
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>
+                9D Capital LLC ("9D Capital," "we," "us," or "our") is committed to protecting the privacy 
+                and security of your personal information. This Privacy Policy describes how we collect, use, 
+                disclose, and safeguard your information when you visit our website or engage our services.
+            </p>
+            <p>
+                As a Registered Investment Adviser with the Securities and Exchange Commission (SEC), we are 
+                subject to strict regulatory requirements regarding the handling of client information under 
+                Regulation S-P and other applicable laws.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Information We Collect</h2>
+            
+            <h3>Information You Provide Directly</h3>
+            <p>We collect information that you voluntarily provide to us, including:</p>
+            <ul>
+                <li>Name, address, email address, and phone number</li>
+                <li>Financial information (assets, income, investment objectives)</li>
+                <li>Social Security number or taxpayer identification number</li>
+                <li>Employment and professional information</li>
+                <li>Investment experience and risk tolerance</li>
+                <li>Bank account information for funding purposes</li>
+            </ul>
+            
+            <h3>Information Collected Automatically</h3>
+            <p>When you visit our website, we may automatically collect:</p>
+            <ul>
+                <li>IP address and browser type</li>
+                <li>Device information and operating system</li>
+                <li>Pages visited and time spent on our site</li>
+                <li>Referring website addresses</li>
+                <li>Cookie data (see Cookie Policy below)</li>
+            </ul>
+            
+            <h3>Information from Third Parties</h3>
+            <p>We may receive information about you from:</p>
+            <ul>
+                <li>Credit bureaus and financial institutions</li>
+                <li>Identity verification services</li>
+                <li>Publicly available sources</li>
+                <li>Other financial professionals you authorize us to contact</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide investment advisory and wealth management services</li>
+                <li>Open and manage your investment accounts</li>
+                <li>Execute transactions and maintain records</li>
+                <li>Comply with legal and regulatory requirements</li>
+                <li>Communicate with you about your account and our services</li>
+                <li>Improve our website and service offerings</li>
+                <li>Detect and prevent fraud or unauthorized access</li>
+                <li>Respond to legal requests and enforce our agreements</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Information Sharing and Disclosure</h2>
+            
+            <div class="highlight-box">
+                <p><strong>Important:</strong> We do not sell your personal information to third parties.</p>
+            </div>
+            
+            <p>We may share your information with:</p>
+            
+            <h3>Service Providers</h3>
+            <ul>
+                <li><strong>Custodians:</strong> SEI Private Trust Company for asset custody and safekeeping</li>
+                <li><strong>Technology Providers:</strong> Software and platform providers for account management</li>
+                <li><strong>Professional Advisors:</strong> Attorneys, accountants, and consultants as needed</li>
+                <li><strong>Third-Party Administrators:</strong> For processing transactions and maintaining records</li>
+            </ul>
+            
+            <h3>Legal Requirements</h3>
+            <p>We may disclose your information when required by law, including:</p>
+            <ul>
+                <li>In response to subpoenas, court orders, or legal processes</li>
+                <li>To comply with SEC, FINRA, or other regulatory requirements</li>
+                <li>To protect our rights, property, or safety, or that of others</li>
+                <li>In connection with fraud prevention or investigation</li>
+            </ul>
+            
+            <h3>Business Transfers</h3>
+            <p>
+                If we are involved in a merger, acquisition, or sale of assets, your information may be 
+                transferred as part of that transaction. We will notify you of any such change.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Data Security</h2>
+            <p>
+                We implement robust security measures to protect your personal information, including:
+            </p>
+            <ul>
+                <li>256-bit SSL encryption for data transmission</li>
+                <li>Secure data storage with restricted access controls</li>
+                <li>Regular security audits and vulnerability assessments</li>
+                <li>Employee training on data protection and privacy</li>
+                <li>Multi-factor authentication for account access</li>
+                <li>Regular backups and disaster recovery procedures</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>
+                    <strong>Note:</strong> While we strive to protect your information, no method of transmission 
+                    over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Cookie Policy</h2>
+            <p>
+                Our website uses cookies and similar tracking technologies to enhance your browsing experience 
+                and analyze site traffic. Cookies are small text files stored on your device.
+            </p>
+            
+            <h3>Types of Cookies We Use</h3>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for the website to function properly</li>
+                <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our site</li>
+                <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+            </ul>
+            
+            <p>
+                You can control cookies through your browser settings. Note that disabling cookies may 
+                affect the functionality of our website.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Your Rights and Choices</h2>
+            
+            <h3>Access and Correction</h3>
+            <p>
+                You have the right to access, correct, or update your personal information. Contact us 
+                at <a href="mailto:contact@9d.capital" style="color: var(--navy-deep);">contact@9d.capital</a> 
+                to request changes.
+            </p>
+            
+            <h3>Marketing Communications</h3>
+            <p>
+                You may opt out of receiving marketing communications from us by clicking the "unsubscribe" 
+                link in our emails or contacting us directly. Note that you cannot opt out of service-related 
+                communications.
+            </p>
+            
+            <h3>Account Closure</h3>
+            <p>
+                If you wish to close your account, please contact us. We will retain certain information 
+                as required by law or for legitimate business purposes.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>California Privacy Rights</h2>
+            <p>
+                If you are a California resident, you have additional rights under the California Consumer 
+                Privacy Act (CCPA), including:
+            </p>
+            <ul>
+                <li>Right to know what personal information we collect and how it's used</li>
+                <li>Right to request deletion of your personal information</li>
+                <li>Right to opt-out of the sale of personal information (we do not sell your information)</li>
+                <li>Right to non-discrimination for exercising your privacy rights</li>
+            </ul>
+            <p>
+                To exercise these rights, contact us at <a href="mailto:contact@9d.capital" style="color: var(--navy-deep);">contact@9d.capital</a>.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Children's Privacy</h2>
+            <p>
+                Our services are not directed to individuals under the age of 18. We do not knowingly collect 
+                personal information from children. If we become aware that we have collected information from 
+                a child, we will delete it promptly.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>International Users</h2>
+            <p>
+                Our services are based in the United States. If you are accessing our website from outside 
+                the U.S., your information will be transferred to and processed in the United States, which 
+                may have different data protection laws than your country.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Changes to This Privacy Policy</h2>
+            <p>
+                We may update this Privacy Policy periodically to reflect changes in our practices or 
+                applicable laws. We will post the updated policy on our website with a revised "Last Updated" 
+                date. Material changes will be communicated to clients directly.
+            </p>
+        </div>
+        
+        <div class="contact-info">
+            <h3>Contact Us About Privacy</h3>
+            <p>If you have questions or concerns about this Privacy Policy or our privacy practices, please contact us:</p>
+            <p>
+                <strong>9D Capital LLC</strong><br>
+                244 Fifth Avenue, Suite 1211<br>
+                New York, NY 10001
+            </p>
+            <p>
+                Email: <a href="mailto:contact@9d.capital">contact@9d.capital</a><br>
+                Phone: <a href="tel:+12127293498">(212) 729-3498</a>
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 9D Capital LLC. All rights reserved. | Registered Investment Adviser | CRD #308524</p>
+    </footer>
+</body>
+</html>
