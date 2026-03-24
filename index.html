@@ -10,15 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy-deep: #0A2640;
-            --navy-mid: #0F3460;
-            --gold: #C6A65A;
-            --gold-light: #D4BA7A;
+            --navy-deep: #2C3E50;
+            --navy-mid: #3D5166;
+            --gold: #A89A7D;
+            --gold-light: #B8AD96;
             --white: #FFFFFF;
-            --off-white: #F8F7F4;
-            --text-light: rgba(255,255,255,0.7);
-            --text-muted: rgba(255,255,255,0.5);
-            --border-light: rgba(198,166,90,0.2);
+            --off-white: #F5F4F2;
+            --text-light: rgba(255,255,255,0.6);
+            --text-muted: rgba(255,255,255,0.4);
+            --border-light: rgba(168,154,125,0.2);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -55,14 +55,15 @@
             align-items: center;
         }
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--white);
-            letter-spacing: 0.15em;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 0.18em;
             text-decoration: none;
+            text-transform: uppercase;
         }
-        .logo span { color: var(--gold); }
+        .logo span { color: var(--gold); font-weight: 500; }
         .nav { display: flex; gap: 2rem; }
         .nav a {
             color: var(--text-light);
@@ -93,34 +94,35 @@
         /* ── Hero ── */
         .hero {
             background: var(--navy-deep);
-            padding: 9rem 2rem 5rem;
+            padding: 8rem 2rem 4rem;
             text-align: center;
         }
         .hero-badge {
             display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--gold);
-            border: 1px solid var(--border-light);
-            padding: 0.4rem 1.2rem;
-            margin-bottom: 2rem;
+            color: rgba(255,255,255,0.4);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 0.35rem 1rem;
+            margin-bottom: 1.5rem;
         }
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            font-weight: 500;
-            color: var(--white);
-            max-width: 620px;
-            margin: 0 auto 1.2rem;
-            line-height: 1.25;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            max-width: 520px;
+            margin: 0 auto 1rem;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
         }
         .hero p {
-            color: var(--text-light);
-            font-size: 1.05rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
             font-weight: 300;
-            max-width: 520px;
+            max-width: 440px;
             margin: 0 auto;
         }
         .gold-line {
@@ -146,11 +148,12 @@
             margin-bottom: 0.5rem;
         }
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
             font-weight: 500;
             color: var(--navy-deep);
             margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
         }
         .services-list {
             display: flex;
@@ -188,7 +191,7 @@
         .about .section-label { color: var(--gold); }
         .about .section-title {
             color: var(--navy-deep);
-            font-size: 1.3rem;
+            font-size: 1.05rem;
         }
         .about p {
             color: rgba(10,38,64,0.6);
@@ -309,8 +312,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-badge">Registered Investment Adviser</div>
-        <h1>Disciplined Capital Stewardship for Enduring Wealth</h1>
-        <p>Independent, fiduciary-first advisory built around the priorities that matter to you and your family.</p>
+        <h1>Independent Wealth Management &amp; Advisory</h1>
+        <p>Fiduciary advisory services for individuals and families.</p>
         <div class="gold-line"></div>
     </section>
 
